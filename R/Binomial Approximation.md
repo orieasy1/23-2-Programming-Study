@@ -108,3 +108,23 @@ R에서 정규분포를 나타내기 위해 사용하는 함수들은 다음과 
     * n: 생성할 난수의 개수
     * mean: 정규 분포의 평균
     * sd: 정규 분포의 표준 편차
+
+<br>
+일반적으로 bin(n, p)는 다음 조건을 만족하면 정규분포 N(np, npq)에 근사한다고 알려져 있다.
+n이 클수록, p가 0.5에 가까울 수록 이 현상이 더 잘 나타난다.
+
+다음과 같은 R코드로 이 현상을 확인할 수 있다.
+
+```R
+x <- 0:100
+y_binom <- dbinom(x, size=100, prob=0.6) #pmf of binomal
+y_normal <-dnorm(x, mean = 60, sd=sqrt(24)) #pdf of normal
+plot(x, y_binom, type="s", col="blue") #draw in stair steo
+par(new=TRUE)
+plot(x, y_normal, type="l", col="red") #draw in line
+```
+
+실행결과:
+
+![Alt text](image-3.png)
+
