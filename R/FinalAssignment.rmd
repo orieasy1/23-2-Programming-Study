@@ -1,0 +1,125 @@
+---
+title: "통계처리입문 기말과제 22102009 이지원"
+author: "이지원"
+date: "2023-11-28"
+output: word_document
+---
+
+#1. 서론
+
+mpg에 나와있는 정보들을 바탕으로 변수 displ(배기량)과과 cyl(실린더 수)가 hwy(고속도로 연비)와 cty(도시 연비)에 어떤 영향을 미치는지, 어떤 변수가 자동차 연비에 더 큰 영향을 끼치는지에 대해 알아보려고 한다.
+
+##1.1 분석에 사용된 dataset 소개
+
+* mpg는 R ggplot2 패키지에 기본적으로 포함된 dataset이다.
+* 1999년과 2008년에 출시된 여러 자동차 모델의 연비 대한 정보들을 담고 있다.
+* audi, chevrolet, ford, hyundai 등 총 15개의 제조사 자동차 모델들이 있고 실린더 수, 변속기 종류, 구동방식 등에 대한 정보를 가지고 있다.
+
+##1.2 사용할 주요 변수 소개
+
+* cty: 자동차의 도시연비
+* hwy: 자동차의 고속도로 연비
+* displ: 자동차 엔진 배기량
+* cyl: 자동차 엔진 실린더 수
+
+
+#2. 변수 간 상관관계 분석
+
+##2.1 자동차 엔진 배기량과 연비 상관관계 분석
+
+자동차 엔진 배기량(displ)이 증가함에 따라 자동차의 고속도로 연비(hwy)와 도시 연비(cty) 모두 감소하는 경향을 보인다.
+
+```r
+ggplot(mpg, aes(x = displ, y = hwy, color = displ)) +
+  geom_point() +
+  labs(title = "배기량과 고속도로 연비", x = "배기량", y = "고속도로 연비")
+  
+ggplot(mpg, aes(x = displ, y = cty, color = displ)) +
+  geom_point() +
+  labs(title = "배기량과 도시 연비", x = "배기량", y = "도시 연비")
+```
+
+```{r, echo=FALSE, fig.width=3.2, fig.height=2.5}
+library(ggplot2)
+
+data(mpg)
+
+ggplot(mpg, aes(x = displ, y = hwy, color = displ)) +
+  geom_point() +
+  labs(title = "배기량과 고속도로 연비", x = "배기량", y = "고속도로 연비")
+  
+ggplot(mpg, aes(x = displ, y = cty, color = displ)) +
+  geom_point() +
+  labs(title = "배기량과 도시 연비", x = "배기량", y = "도시 연비")
+```
+
+
+##2.2 자동차 엔진 실린더 수와 연비 상관관계 분석
+
+자동차 엔진 실린더 수가 증가함에 따라 자동차의 고속도로 연비와 도시 연비 모두 감소하는 경향을 보인다.
+
+```r
+ggplot(mpg, aes(x = cyl, y = hwy, color = factor(cyl))) +
+  geom_point() +
+  labs(title = "실린더 수와 고속도로 연비", x = "실린더 수", y = "고속도로로 연비") +
+  scale_color_manual(values = c("4" = "blue", "5" = "red", "6" = "green", "8" = "purple", "8" = "orange"))
+
+ggplot(mpg, aes(x = cyl, y = cty, color = factor(cyl))) +
+  geom_point() +
+  labs(title = "실린더 수와 도시 연비", x = "실린더 수", y = "도시 연비") +
+  scale_color_manual(values = c("4" = "blue", "5" = "red", "6" = "green", "8" = "purple", "8" = "orange"))
+```
+
+```{r, echo=FALSE, fig.width=3.2, fig.height=2.5}
+library(ggplot2)
+
+data(mpg)
+
+ggplot(mpg, aes(x = cyl, y = hwy, color = factor(cyl))) +
+  geom_boxplot() +
+  labs(title = "실린더 수와 고속도로 연비", x = "실린더 수", y = "고속도로 연비") +
+  scale_color_manual(values = c("4" = "blue", "5" = "red", "6" = "green", "8" = "orange"))
+
+ggplot(mpg, aes(x = cyl, y = cty, color = factor(cyl))) +
+  geom_boxplot() +
+  labs(title = "실린더 수와 도시 연비", x = "실린더 수", y = "도시 연비") +
+  scale_color_manual(values = c("4" = "blue", "5" = "red", "6" = "green", "8" = "orange"))
+```
+
+
+#3. 변수별 연비 영향 분석
+
+```{r, echo=FALSE}
+lm_hwy <- lm(hwy ~ displ, data = mpg)
+lm_cty <- lm(cty ~ displ, data = mpg)
+
+coef_hwy <- coef(lm_hwy)
+coef_cty <- coef(lm_cty)
+
+cat("고속도로 연비 회귀 계수:\n", coef_hwy, "\n\n")
+cat("도시 연비 회귀 계수:\n", coef_cty, "\n")
+```
+
+* 배기량이 1 증가할 때마다 고속도로 연비가 평균적으로 3.5305씩 감소한다.
+* 배기량이 1 증가할 때마다 도시 연비가 평균적으로 2.6304씩 감소한다.
+
+```{r, echo=FALSE}
+lm_hwy <- lm(hwy ~ cyl, data = mpg)
+lm_cty <- lm(cty ~ cyl, data = mpg)
+
+coef_hwy <- coef(lm_hwy)
+coef_cty <- coef(lm_cty)
+
+cat("고속도로 연비 회귀 계수:\n", coef_hwy, "\n\n")
+cat("도시 연비 회귀 계수:\n", coef_cty, "\n")
+```
+
+* 실린더 수가 1 증가할 때마다 고속도로 연비가 평균적으로 2.8152씩 감소한다.
+* 실린더 수가 1 증가할 때마다 도시 연비가 평균적으로 2.1279씩 감소한다.
+<br>
+
+#4. 결론
+
+1. 배기량이 증가함에 따라 자동차의 연비가 감소하는 경향이 있다.
+2. 실린더 수가 증가함에 따라 자동차의 연비가 감소하는 경향이 있다.
+3. 회귀분석 결과, 배기량의 회귀계수 절댓값이 더 크기 때문에, 배기량이 실린더 수보다 자동차의 연비에 더 큰 영향을 미친다는 사실을 확인할 수 있었다.
