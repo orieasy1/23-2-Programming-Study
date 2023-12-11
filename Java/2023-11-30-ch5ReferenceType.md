@@ -194,11 +194,56 @@ indexOf() 메소드: 문자열에서 특정 문자열의 위치를 찾고자 할
 
 * 주어진 문자열이 시작되는 인덱스를 반환
 * 주어진 문자열이 포함되어 있지 않으면 -1을 반환
+<br><br>
+contains() 메소드: 주어진 문자열이 단순히 포함되었는지만 알고 싶을 때 사용
+
+* 주어진 문자열이 포함되어있으면 true를 반호나
+* 주어진 문자열이 포함되어있지 않으면 false를 반환
 
 ```java
 public class indexOfContainsExample {
     pubic static void main(String[] args) {
-        Strng
+        String subject = "자바 프로그래밍";
+
+        int location = subject.indexOf("자바");
+        if (location != 1) {
+            System.out.println("자바와 관련된 책이군요");
+        } else {
+            System.out.println("자바와 관련 없는 책이군요");
+        }
+
+        boolean result = subject.contains("자바");
+
+        if (result) {
+            System.out.println("자바와 관련된 책이군요");
+        } else {
+            System.out.println("자바와 관련 없는 책이군요");
+        }
+    }
+}
+```
+
+**문자열 분리**
+
+split() 메소드: 문자열이 구분자를 사용하여 여러 개의 문자열로 구성되어 있을 경우, 이를 분리하여 얻고 싶을 때 사용
+
+```java
+public class SplitExample {
+    String board = "1, 자바 학습, 참조 타입 String을 학습합니다, 이지원"
+    
+    //문자열 분리
+    String[] tokens = board.split(",");
+
+    //인덱스 별로 읽기
+    System.out.print("번호: " + tokens[0]);
+    System.out.print("제목: " + tokens[1]);
+    System.out.print("내용: " + tokens[2]);
+    System.out.print("성명: " + tokens[3]);
+    System.out.print();
+
+    //for문을 이용한 읽기
+    for(int i=0; i<tokens.length; i++) {
+        System.out.println(tokens[i]);
     }
 }
 ```
