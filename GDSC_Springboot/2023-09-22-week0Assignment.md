@@ -37,19 +37,21 @@ JDK 버전에 주의하도록 하자.
 
 에 체크 표시를 해주면 된다.
 
-<img width="499" alt="스크린샷 2023-09-27 114937" src="https://github.com/orieasy1/2023-2-WebStudy-backend/assets/129071350/7588f9e4-bca0-475d-ad08-d55846b014b4">
+<img width="372" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/a816508e-e7d0-468b-87ab-b905c19282cf">
+
 
 <br>
 
 **톰캣 서버 적용방법** <br>
 Run > Edit Configurations 클릭
 
-<img width="786" alt="image" src="https://github.com/orieasy1/2023-2-WebStudy-backend/assets/129071350/7e00bb77-c2f8-4546-97a6-b617fe27302a">
+<img width="552" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/6be3af2d-c9ab-4538-affa-770ed2845a0c">
+
 
 <br>Tomcat 중 local을 고르고 포트번호가 중복되지 않도록 8080을 8081로 변경해준다.
 위를 보면 artifacts가 configuration되지 않았다고 오류가 뜨는데 그러면 밑의 사진과 같이 artifacts를 설정해주면 된다.
 
-<img width="763" alt="image" src="https://github.com/orieasy1/2023-2-WebStudy-backend/assets/129071350/9182dee2-3d2a-44d5-9dab-7083822342b8">
+<img width="551" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/aa830ce3-601d-43c8-a9bf-4f3f60d0a94a">
 
 이후 HelloController라는 클래스를 만들어 아래와 같은 코드를 입력했는데
 
@@ -130,17 +132,20 @@ tasks.named('test') {
 
 build.gradle 파일의 내용을 적용하려면 refresh를 해줘야한다.
 
-<img width="416" alt="image" src="https://github.com/orieasy1/2023-2-WebStudy-backend/assets/129071350/2421ce99-e0a1-48ca-a416-c0ef0b3a5682">
+<img width="311" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/926df8b9-4127-47da-adab-6ba28ff66f52">
+
 
 위 사진처럼 오른쪽 코끼리 그림을 찾아 클리하고 sbb에서 우클릭을하여 refresh를 진행시켜준다.
 <br><br>
 Intellij에서는 사전 설정 옵션이 필요하다. 다음과 같이 진행할 것.
 
-<img width="736" alt="image" src="https://github.com/orieasy1/2023-2-WebStudy-backend/assets/129071350/4ee4bfc5-a800-4c8d-b681-2882eca56d81">
+<img width="553" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/02a6a03c-c2ac-428e-86c4-9653fea8d2b1">
+
 
 Build project auto...로 시작하는 사항 체크
 
-<img width="739" alt="image" src="https://github.com/orieasy1/2023-2-WebStudy-backend/assets/129071350/cff30c78-1c2d-4ab9-bf51-689716fa725e">
+<img width="553" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/99e660c7-1962-4aeb-9311-55fb4aa1f54d">
+
 
 Allow auto-make to strat even if... 로 시작하는 사항 체크
 
