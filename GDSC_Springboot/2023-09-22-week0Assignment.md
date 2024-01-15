@@ -39,21 +39,7 @@ JDK 버전에 주의하도록 하자.
 
 <img width="372" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/a816508e-e7d0-468b-87ab-b905c19282cf">
 
-
-<br>
-
-**톰캣 서버 적용방법** <br>
-Run > Edit Configurations 클릭
-
-<img width="552" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/6be3af2d-c9ab-4538-affa-770ed2845a0c">
-
-
-<br>Tomcat 중 local을 고르고 포트번호가 중복되지 않도록 8080을 8081로 변경해준다.
-위를 보면 artifacts가 configuration되지 않았다고 오류가 뜨는데 그러면 밑의 사진과 같이 artifacts를 설정해주면 된다.
-
-<img width="551" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/aa830ce3-601d-43c8-a9bf-4f3f60d0a94a">
-
-이후 HelloController라는 클래스를 만들어 아래와 같은 코드를 입력했는데
+ HelloController라는 클래스를 만들어 아래와 같은 코드를 입력했는데
 
 ```java
 package com.mysite.sbb;
