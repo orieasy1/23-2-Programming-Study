@@ -51,13 +51,15 @@ Run > Edit Configuration > +버튼 > Smart Tomcat 에 들어가서 다운 받아
 내가 사용하는 유료버전에서는 다음과 같은 방법을 사용을 보통 사용하는 것 같다. <br>
 Run > Edit Configuration > +버튼 > Tomcat Server > Local 
 
-<img width="793" alt="image" src="https://github.com/orieasy1/2023-2-WebStudy-backend/assets/129071350/29eb5e09-a61f-46c9-a1ca-9e2c6730f760">
+S<img width="544" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/4b1bedc0-5a97-4da5-9db3-113442781987">
+
 
 그럼 위에 처럼 밑부분에 Warning: No artifacts marked for deployment라는 에러가 뜰 수 있다.
 그러면 오른쪽에 위치한 fix 버튼을 눌러 deployment를 설정해주도록한다.
 둘 중 mvn-tomcat-webapp: war exploded를 선택해주면
 
-<img width="780" alt="image" src="https://github.com/orieasy1/2023-2-WebStudy-backend/assets/129071350/94497264-49e4-41f7-8832-b520c66dbf45">
+<img width="553" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/09f86252-cca1-4f57-938e-ee4a942b7a52">
+
 
 다음과 같은 창이 뜨게 되는데 그럼 오류가 해결된 것이다.
 <br><br>
@@ -349,7 +351,7 @@ web.xml 파일에 이렇게 작성해주고
 
 다시 run을 돌리면.. 드디어 밑과 같은 페이지가 나온다.
 
-<img width="358" alt="image" src="https://github.com/orieasy1/2023-2-WebStudy-backend/assets/129071350/f1a4f857-ceed-4054-868f-038245d468d9">
+<img width="266" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/06639eae-3093-4ab2-9072-2ec1827c57fe">
 
 <br><br>
 
