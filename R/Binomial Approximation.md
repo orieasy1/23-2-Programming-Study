@@ -15,7 +15,9 @@ bin(n,p)의 기댓값은 np이고 분산은 np(1-p)이다.
 
 사건 A가 일어날 확률이 p일 때, n회의 독립시행에서 사건 A가 r회 일어날 확률
 
-![Alt text](image.png)
+<img width="550" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/93644a64-e7de-4b3b-9256-4bc7c46b7851">
+
+
 
 <br>
 
@@ -59,7 +61,10 @@ plot(x, y, type = "s") #x와 y 시각화
 
 시행결과:
 
-![Alt text](image-1.png)
+<img width="550" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/ae4fd8d9-45c3-4f73-a7b4-9b393f50be5a">
+
+
+
 
 ```R
 x <- 1:100 #변수 x에서 1부터 100까지 할당
@@ -71,7 +76,11 @@ plot(x, y, type = "s") #x와 y 시각화
 
 시행결과:
 
-![Alt text](image-2.png)
+<img width="551" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/03630e2e-74c3-4d87-bd38-9b54783eb26c">
+
+
+
+
 
 <br>
 10회 시행했을 때 보다 100회 시행했을 때 보다 정규분포의 종모양과 비슷해지는 것을 관찰할 수 있는데 이 점에 주목해야한다.
@@ -126,5 +135,6 @@ plot(x, y_normal, type="l", col="red") #draw in line
 
 실행결과:
 
-![Alt text](image-3.png)
+<img width="553" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/eedfe6cd-46cc-41fc-853b-eb0b877d5e09">
+
 
