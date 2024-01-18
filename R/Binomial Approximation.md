@@ -15,7 +15,7 @@ bin(n,p)의 기댓값은 np이고 분산은 np(1-p)이다.
 
 사건 A가 일어날 확률이 p일 때, n회의 독립시행에서 사건 A가 r회 일어날 확률
 
-<img width="550" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/93644a64-e7de-4b3b-9256-4bc7c46b7851">
+<img width="200" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/4aa9bdd3-6fd0-44a0-a6d4-9ab22135c16d">
 
 
 
