@@ -1,5 +1,7 @@
 # 23-2-Programming-Study
 
+## 2023학년도 2학기 개발일지(1학년)
+
 <img width="300" alt="image" src="https://github.com/orieasy1/23-2-Programming-Study/assets/129071350/40673e69-0789-4c5e-b15d-25e63380ae65">
 
 **2023.09 ~ 2024.02**
